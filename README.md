@@ -35,7 +35,7 @@ At run time ASP.NET Core will look for the configuration in-app settings.json an
   1. First initialize the secret store  `dotnet user-secrets init`
   2. Then add your secrets  `dotnet user-secrets set "ConnectionStrings;"
   
-##Creating our database table's page
+## Creating our database table's page
 #### Visual Studio
   1. Create a folder inside the pages folder, Name it the entity in numerous.
   2. Add **New Scaffold Item** to the folder.
@@ -45,11 +45,11 @@ At run time ASP.NET Core will look for the configuration in-app settings.json an
 
 #### .NET CLI
   1. Install the .NET ASPNET code genrator tool as global tool 
-  ```Javascript
+  ```python
   dotnet tool install -g dotnet-aspnet-codegenerator
   ```
   2. Use the .NET ASPNET code generator command to scaffold the pages 
-  ```Javascript
+  ```python
  dotnet aspnet-codegenerator razorpage --model <Entity> --datacontext DbNameContext --relativeFolderPath Pages/<EntityNumerous> --ReferenceScriptLibraries
  ```
  
@@ -60,10 +60,10 @@ At run time ASP.NET Core will look for the configuration in-app settings.json an
   - Edit
   - Index
   
- *In order to see the table in our webapp edit the URL to navigate directly to the Table Index page by adding `/<EntityNumerous>`
+ *In order to see the table in our webapp edit the URL to navigate directly to the Table Index page by adding `/<EntityNumerous>`*
 
 ## Edit the HTML page so you can navigate with links to a required table in our database
-```javascript
+```python
 @page
 @model IndexModel
 @{
