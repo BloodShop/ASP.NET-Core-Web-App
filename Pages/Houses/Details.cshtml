@@ -1,0 +1,73 @@
+﻿@page
+@model ReverseEnginereeing.Pages.Houses.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>House</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.BuiltAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.BuiltAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.SizeM2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.SizeM2)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Rooms)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Rooms)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.WantedPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.WantedPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.ForSale)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.ForSale)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Neighborhood)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Neighborhood.NeighborhoodId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Owner)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Owner.PersonId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.House.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.House.Type.TypeId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.House?.HouseId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

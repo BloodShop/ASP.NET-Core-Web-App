@@ -1,0 +1,48 @@
+﻿@page
+@model ReverseEnginereeing.Pages.Specializations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization[0].LevelNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization[0].SalesMan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specialization[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Specialization) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LevelNavigation.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalesMan.SalesManId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.TypeId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

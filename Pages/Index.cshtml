@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome To the Final Project</h1>
+    <ul style="text-align:left; font-size:30px;">
+        <li><a id="Countries"           href="javascript:CopyURLtoClipBoard('Countries')">Countries list</a></li>
+        <li><a id="Cities"              href="javascript:CopyURLtoClipBoard('Cities')">Cities list</a></li>
+        <li><a id="Neighborhoods"       href="javascript:CopyURLtoClipBoard('Neighborhoods')">Neighborhoods list</a></li>
+        <li><a id="Houses"              href="javascript:CopyURLtoClipBoard('Houses')">Houses list</a></li>
+        <li><a id="Salemen"             href="javascript:CopyURLtoClipBoard('Salemen')">Salemen list</a></li>
+        <li><a id="Sales"               href="javascript:CopyURLtoClipBoard('Sales')">Sales list</a></li>
+        <li><a id="Specializations"     href="javascript:CopyURLtoClipBoard('Specializations')">Specializations list</a></li>
+        <li><a id="Customers"           href="javascript:CopyURLtoClipBoard('Customers')">Customers list</a></li>
+        <li><a id="HouseTypes"          href="javascript:CopyURLtoClipBoard('HouseTypes')">House-Types list</a></li>
+        <li><a id="Comapanies"          href="javascript:CopyURLtoClipBoard('Comapanies')">Comapanies list</a></li>
+        <li><a id="ExperienceLevels"    href="javascript:CopyURLtoClipBoard('ExperienceLevels')">ExperienceLevels list</a></li>
+    </ul>
+</div>
+<script>
+    function CopyURLtoClipBoard(obj) { 
+        window.open(window.location.href + obj, '_blank').focus();
+    }
+</script>
