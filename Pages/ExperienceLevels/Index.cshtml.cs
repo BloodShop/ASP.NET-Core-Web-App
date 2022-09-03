@@ -25,7 +25,9 @@ namespace ReverseEnginereeing.Pages.ExperienceLevels
         {
             if (_context.ExperienceLevels != null)
             {
-                ExperienceLevel = await _context.ExperienceLevels.ToListAsync();
+                ExperienceLevel = await _context.ExperienceLevels
+                    .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
+                    .ToListAsync();
             }
         }
     }

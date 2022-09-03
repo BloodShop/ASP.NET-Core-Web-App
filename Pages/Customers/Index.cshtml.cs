@@ -26,7 +26,9 @@ namespace ReverseEnginereeing.Pages.Customers
             if (_context.People != null)
             {
                 Person = await _context.People
-                .Include(p => p.Company).ToListAsync();
+                .Include(p => p.Company)
+                .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
+                .ToListAsync();
             }
         }
     }

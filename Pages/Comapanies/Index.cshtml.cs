@@ -25,7 +25,9 @@ namespace ReverseEnginereeing.Pages.Comapanies
         {
             if (_context.Companies != null)
             {
-                Company = await _context.Companies.ToListAsync();
+                Company = await _context.Companies
+                    .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
+                    .ToListAsync();
             }
         }
     }

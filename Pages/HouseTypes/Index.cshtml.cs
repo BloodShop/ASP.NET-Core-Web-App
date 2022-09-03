@@ -25,7 +25,9 @@ namespace ReverseEnginereeing.Pages.HouseTypes
         {
             if (_context.HouseTypes != null)
             {
-                HouseType = await _context.HouseTypes.ToListAsync();
+                HouseType = await _context.HouseTypes
+                    .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
+                    .ToListAsync();
             }
         }
     }

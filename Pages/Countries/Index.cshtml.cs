@@ -25,7 +25,9 @@ namespace ReverseEnginereeing.Pages.Countries
         {
             if (_context.Countries != null)
             {
-                Country = await _context.Countries.ToListAsync();
+                Country = await _context.Countries
+                    .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
+                    .ToListAsync();
             }
         }
     }
