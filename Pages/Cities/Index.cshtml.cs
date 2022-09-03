@@ -25,10 +25,7 @@ namespace ReverseEnginereeing.Pages.Cities
         {
             if (_context.Cities != null)
             {
-                City = await _context.Cities
-                .Include(c => c.Country)
-                .AsNoTracking() // Disable change tracking, EF Core will skip the snap shot when loaded
-                .ToListAsync();
+                City = await _context.Cities.ToListAsync();
             }
         }
     }

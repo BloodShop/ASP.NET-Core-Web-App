@@ -13,7 +13,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<NADLANContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("NADLAN")));
+builder.Services.AddDbContext<NADLANContext>(options =>
+            options
+                .UseLazyLoadingProxies()
+                .UseSqlServer(builder.Configuration.GetConnectionString("NADLAN")));
 
 var app = builder.Build();
 

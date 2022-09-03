@@ -28,7 +28,7 @@ namespace ReverseEnginereeing.Pages.Cities
                 return NotFound();
             }
 
-            var city = await _context.Cities.FirstOrDefaultAsync(m => m.CityId == id);
+            var city = await _context.Cities.FindAsync(id);
             if (city == null)
             {
                 return NotFound();
