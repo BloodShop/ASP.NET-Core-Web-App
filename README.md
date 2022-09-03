@@ -103,3 +103,7 @@ At run time ASP.NET Core will look for the configuration in-app settings.json an
 <p>
   <img height="600" src="https://user-images.githubusercontent.com/23366804/188271599-00b27609-9935-4cb2-b332-b41b2fdec02d.png">
 </p> </div>
+
+# Two patterns for loading Entities
+  1. Eager loading - Include method signals to the EF Core that the related order should be loaded on the same database query as the <EntityNumerous>
+  2. Lazy loading - To enable lazy loading first install package `Microsoft.EntityFrameworkCore.Proxies`
