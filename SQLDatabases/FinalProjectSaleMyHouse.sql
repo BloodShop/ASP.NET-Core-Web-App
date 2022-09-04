@@ -1,10 +1,10 @@
-USE master
+ο»ΏUSE master
 GO
 	IF exists (SELECT * FROM sysdatabases WHERE NAME='NADLAN')
-			DROP DATABASE [NADLAN_EF]
-	CREATE DATABASE [NADLAN_EF]
+			DROP DATABASE [NADLAN]
+	CREATE DATABASE [NADLAN]
 GO
-USE [NADLAN_EF]
+USE [NADLAN]
 CREATE TABLE [Countries] (
 	CountryId INT PRIMARY KEY IDENTITY(1,1),
 	CountryName nvarchar(100) UNIQUE NOT NULL,
@@ -75,10 +75,10 @@ INSERT INTO [Countries] VALUES
 ('Costa Rica',											'CR',	'CRI',	'188'),
 ('Croatia',												'HR',	'HRV',	'191'),
 ('Cuba',												'CU',	'CUB',	'192'),
-('Cura?ao',												'CW',	'CUW',	'531'),
+('CuraΓ§ao',												'CW',	'CUW',	'531'),
 ('Cyprus',												'CY',	'CYP',	'196'),
 ('Czechia',												'CZ',	'CZE',	'203'),
-('C?te d`Ivoire',										'CI',	'CIV',	'384'),
+('CΓ΄te d`Ivoire',										'CI',	'CIV',	'384'),
 ('Denmark',												'DK',	'DNK',	'208'),
 ('Djibouti',											'DJ',	'DJI',	'262'),
 ('Dominica',											'DM',	'DMA',	'212'),
@@ -203,8 +203,8 @@ INSERT INTO [Countries] VALUES
 ('Romania',												'RO',	'ROU',	'642'),
 ('Russian Federation',									'RU',	'RUS',	'643'),
 ('Rwanda',												'RW',	'RWA',	'646'),
-('R?union',												'RE',	'REU',	'638'),
-('Saint Barth?lemy',									'BL',	'BLM',	'652'),
+('RΓ©union',												'RE',	'REU',	'638'),
+('Saint BarthΓ©lemy',									'BL',	'BLM',	'652'),
 ('Saint Helena, Ascension and Tristan da Cunha',		'SH',	'SHN',	'654'),
 ('Saint Kitts and Nevis',								'KN',	'KNA',	'659'),
 ('Saint Lucia',											'LC',	'LCA',	'662'),
@@ -268,7 +268,7 @@ INSERT INTO [Countries] VALUES
 ('Yemen',												'YE',	'YEM',	'887'),
 ('Zambia',												'ZM',	'ZMB',	'894'),
 ('Zimbabwe',											'ZW',	'ZWE',	'716'),
-('?land Islands',										'AX',	'ALA',	'248')
+('Γ…land Islands',										'AX',	'ALA',	'248')
 
 
 
@@ -434,43 +434,43 @@ CREATE TABLE [Specialization] (
 	PRIMARY KEY (SalesManID, TypeID),
 ); 
 INSERT INTO [Specialization] VALUES
---	SalesManID	 HouseT				Level
-	(19,		'Bungalow',			'TYRO'),
-	(19,		'In-Law Suite',		'MODERATE'),
-	(1,		'Villa',			'PRO'),
-	(1,		'In-Law Suite',		'CHAMP'),
-	(1,		'Apartment',		'TYRO'),
-	(2,		'Apartment',		'CHAMP'),
-	(2,		'Bungalow',			'PRO'),
-	(2,		'Carriage / Coach',	'MODERATE'),
-	(3,		'Cottage',			'MODERATE'),
-	(3,		'Ranch',			'PRO'),
-	(4,		'Ranch',			'PRO'),
-	(5,		'In-Law Suite',		'CHAMP'),
-	(6,		'Apartment',		'MODERATE'),
-	(6,		'Bungalow',			'PRO'),
-	(7,		'Carriage / Coach',	'TYRO'),
-	(7,		'Ranch',			'MODERATE'),
-	(7,		'In-Law Suite',		'CHAMP'),
-	(8,		'Single-Family',	'MODERATE'),
-	(8,		'Cottage',			'MODERATE'),
-	(9,		'Single-Family',	'CHAMP'),
-	(9,		'Apartment',		'PRO'),
-	(10,		'Ranch',			'PRO'),
-	(10,		'Carriage / Coach',	'MODERATE'),
-	(11,		'Carriage / Coach',	'CHAMP'),
-	(12,		'Carriage / Coach',	'PRO'),
-	(12,		'Cottage',			'TYRO'),
-	(13,		'Carriage / Coach',	'PRO'),
-	(13,		'Apartment',		'PRO'),
-	(14,		'Townhome',			'MODERATE'),
-	(15,		'In-Law Suite',		'TYRO'),
-	(15,		'Ranch',			'PRO'),
-	(16,		'Ranch',			'MODERATE'),
-	(16,		'Townhome',			'CHAMP'),
-	(17,		'Carriage / Coach',	'TYRO'),
-	(17,		'Villa',			'CHAMP'),
-	(18,		'Carriage / Coach',	'MODERATE')
+--	SalesManID	HouseT		Level
+	(90000,		'Bungalow',			'TYRO'),
+	(90000,		'In-Law Suite',		'MODERATE'),
+	(90001,		'Villa',			'PRO'),
+	(90001,		'In-Law Suite',		'CHAMP'),
+	(90001,		'Apartment',		'TYRO'),
+	(90002,		'Apartment',		'CHAMP'),
+	(90002,		'Bungalow',			'PRO'),
+	(90002,		'Carriage / Coach',	'MODERATE'),
+	(90003,		'Cottage',			'MODERATE'),
+	(90003,		'Ranch',			'PRO'),
+	(90004,		'Ranch',			'PRO'),
+	(90005,		'In-Law Suite',		'CHAMP'),
+	(90006,		'Apartment',		'MODERATE'),
+	(90006,		'Bungalow',			'PRO'),
+	(90007,		'Carriage / Coach',	'TYRO'),
+	(90007,		'Ranch',			'MODERATE'),
+	(90007,		'In-Law Suite',		'CHAMP'),
+	(90008,		'Single-Family',	'MODERATE'),
+	(90008,		'Cottage',			'MODERATE'),
+	(90009,		'Single-Family',	'CHAMP'),
+	(90009,		'Apartment',		'PRO'),
+	(90010,		'Ranch',			'PRO'),
+	(90010,		'Carriage / Coach',	'MODERATE'),
+	(90011,		'Carriage / Coach',	'CHAMP'),
+	(90012,		'Carriage / Coach',	'PRO'),
+	(90012,		'Cottage',			'TYRO'),
+	(90013,		'Carriage / Coach',	'PRO'),
+	(90013,		'Apartment',		'PRO'),
+	(90014,		'Townhome',			'MODERATE'),
+	(90015,		'In-Law Suite',		'TYRO'),
+	(90015,		'Ranch',			'PRO'),
+	(90016,		'Ranch',			'MODERATE'),
+	(90016,		'Townhome',			'CHAMP'),
+	(90017,		'Carriage / Coach',	'TYRO'),
+	(90017,		'Villa',			'CHAMP'),
+	(90018,		'Carriage / Coach',	'MODERATE')
 
 CREATE TABLE [Houses] (
 	HouseID INT PRIMARY KEY IDENTITY(1,1),
@@ -492,27 +492,27 @@ CREATE TABLE [Houses] (
 ); -- drop table [Houses]
 INSERT INTO [Houses] VALUES 
 --   Address			Build-Date				M^2		Rooms	Wanted-Price	ForSale	PersonID    HouseType			Neighbor	
-	('Irusim 18/1',		LTRIM('20150101'),		107,	4,		1500000.01,		0,		18,		'Bungalow',			1	),
-	('Ayanot 6/2',		LTRIM('19901201'),		111,	4,		2600200.90,		1,		01,		'Bungalow',			1	),
-	('Kanayim 98',		LTRIM('19520101'),		98,		3,		3500500.01,		1,		02,		'Apartment',		3	),
-	('Dizingoff 30/10',	LTRIM('19891020'),		100,	4,		1250000.11,		1,		03,		'Villa',			2	),
-	('Reut 18/1',		LTRIM('19901210'),		102,	4,		1550000.01,		0,		04,		'Villa',			5	),
-	('Macabi 11',		LTRIM('19781020'),		309,	8,		2901000.99,		1,		05,		'Villa',			11	),
-	('Neurim 10',		LTRIM('20101011'),		45,		2,		1010230.01,		0,		06,		'Townhome',			8	),
-	('Biet-Yofi 17/1',	LTRIM('20120701'),		67,		3,		2150500.31,		1,		07,		'Single-Family',	8	),
-	('Leonardo 28',		LTRIM('19990623'),		121,	5,		1350000.01,		0,		08,		'Single-Family',	2	),
-	('Neurim 11',		LTRIM('19970315'),		205,	6,		1760100.21,		1,		9,		'Ranch',			11	),
-	('Silabus 30',		LTRIM('20010510'),		151,	5,		1800100.41,		1,		10,		'In-Law Suite',		5	),
-	('Sella-col 14',	LTRIM('20160328'),		87,		3,		2110000.81,		1,		11,		'Cottage',			4	),
-	('Maon 81/4',		LTRIM('19990106'),		99,		4,		1530200.21,		0,		12,		'Bungalow',			2	),
-	('Gamers 16',		LTRIM('20060719'),		165,	6,		1430010.71,		1,		13,		'Carriage / Coach',	10	),
-	('Lepo-Lesham 101',	LTRIM('19951218'),		260,	7,		1630010.31,		1,		14,		'Carriage / Coach',	3	),
-	('Million 320',		LTRIM('20030313'),		310,	7,		2601000.72,		1,		15,		'Carriage / Coach',	7	),
-	('Manzur 101',		LTRIM('20110220'),		105,	5,		1204100.11,		0,		16,		'Carriage / Coach',	9	),
-	('Dom 8',			LTRIM('19981130'),		104,	4,		1187220.71,		1,		17,		'Carriage / Coach',	9	),
-	('Razo 11/1',		LTRIM('20170821'),		172,	5,		1300000.71,		1,		1,		'Cottage',			9	),
-	('Dom 11',			LTRIM('20150821'),		112,	4,		1700000.81,		1,		6,		'In-Law Suite',		2	),
-	('Dom 12',			LTRIM('20150821'),		200,	6,		2200300.11,		1,		11,		'In-Law Suite',		3	)
+	('Irusim 18/1',		LTRIM('20150101'),		107,	4,		1500000.01,		0,		1000,		'Bungalow',			1	),
+	('Ayanot 6/2',		LTRIM('19901201'),		111,	4,		2600200.90,		1,		1001,		'Bungalow',			1	),
+	('Kanayim 98',		LTRIM('19520101'),		98,		3,		3500500.01,		1,		1002,		'Apartment',		3	),
+	('Dizingoff 30/10',	LTRIM('19891020'),		100,	4,		1250000.11,		1,		1003,		'Villa',			2	),
+	('Reut 18/1',		LTRIM('19901210'),		102,	4,		1550000.01,		0,		1004,		'Villa',			5	),
+	('Macabi 11',		LTRIM('19781020'),		309,	8,		2901000.99,		1,		1005,		'Villa',			11	),
+	('Neurim 10',		LTRIM('20101011'),		45,		2,		1010230.01,		0,		1006,		'Townhome',			8	),
+	('Biet-Yofi 17/1',	LTRIM('20120701'),		67,		3,		2150500.31,		1,		1007,		'Single-Family',	8	),
+	('Leonardo 28',		LTRIM('19990623'),		121,	5,		1350000.01,		0,		1008,		'Single-Family',	2	),
+	('Neurim 11',		LTRIM('19970315'),		205,	6,		1760100.21,		1,		1009,		'Ranch',			11	),
+	('Silabus 30',		LTRIM('20010510'),		151,	5,		1800100.41,		1,		1010,		'In-Law Suite',		5	),
+	('Sella-col 14',	LTRIM('20160328'),		87,		3,		2110000.81,		1,		1011,		'Cottage',			4	),
+	('Maon 81/4',		LTRIM('19990106'),		99,		4,		1530200.21,		0,		1012,		'Bungalow',			2	),
+	('Gamers 16',		LTRIM('20060719'),		165,	6,		1430010.71,		1,		1013,		'Carriage / Coach',	10	),
+	('Lepo-Lesham 101',	LTRIM('19951218'),		260,	7,		1630010.31,		1,		1014,		'Carriage / Coach',	3	),
+	('Million 320',		LTRIM('20030313'),		310,	7,		2601000.72,		1,		1015,		'Carriage / Coach',	7	),
+	('Manzur 101',		LTRIM('20110220'),		105,	5,		1204100.11,		0,		1016,		'Carriage / Coach',	9	),
+	('Dom 8',			LTRIM('19981130'),		104,	4,		1187220.71,		1,		1017,		'Carriage / Coach',	9	),
+	('Razo 11/1',		LTRIM('20170821'),		172,	5,		1300000.71,		1,		1001,		'Cottage',			9	),
+	('Dom 11',			LTRIM('20150821'),		112,	4,		1700000.81,		1,		1006,		'In-Law Suite',		2	),
+	('Dom 12',			LTRIM('20150821'),		200,	6,		2200300.11,		1,		1011,		'In-Law Suite',		3	)
 
 CREATE TABLE [Sales] (
 	SaleID INT PRIMARY KEY IDENTITY (1, 1),
@@ -537,35 +537,35 @@ CREATE TABLE [Sales] (
 );
 INSERT INTO Sales VALUES 
 --	HouseID,	BuyerID,	SellerID	SaleManID,	FNL-Price,		Income(%),	 Sale date		 PublishDate	
-	(22,		18,		17,		19,		1500000.00,		0.10,		('20220502'),	('20200611')),
-	(23,		01,		15,		19,		2550200.90,		0.08,		('20190313'),	('20171204')),
-	(3,			02,		13,		02,		3200500.01,		0.07,		('20190821'),	('20180214')),
-	(4,			03,		11,		01,		1250000.00,		0.07,		('20220108'),	('20210709')),
-	(5,			04,		09,		01,		1565000.01,		0.10,		('20220406'),	('20190919')),
-	(6,			05,		07,		01,		2821000.99,		0.11,		('20201103'),	('20190102')),
-	(7,			06,		05,		14,		1210230.01,		0.12,		('20201219'),	('20180725')),
-	(8,			07,		03,		08,		2100000.31,		0.09,		('20211014'),	('20200530')),
-	(9,			08,		01,		09,		1290000.01,		0.05,		('20190201'),	('20181102')),
-   (10,			09,		18,		10,		1770100.00,		0.10,		('20220715'),	('20210203')),
-   (11,			10,		02,		05,		1600100.41,		0.12,		('20210920'),	('20200606')),
-   (12,			11,		04,		03,		2100000.11,		0.06,		('20200130'),	('20190417')),
-   (13,			12,		06,		19,		1530200.21,		0.08,		('20200126'),	('20181203')),
-   (14,			13,		08,		11,		1400010.71,		0.15,		('20190126'),	('20170530')),
-   (15,			14,		10,		12,		1550010.31,		0.13,		('20220311'),	('20200908')),
-   (16,			15,		12,		17,		2301000.72,		0.09,		('20190417'),	('20181212')),
-   (17,			16,		14,		18,		1150100.11,		0.06,		('20201229'),	('20190801')),
-   (18,			17,		15,		18,		1157220.71,		0.08,		('20211122'),	('20200918')),
-   (19,			NULL,	01,		03,		NULL,			0.06,		NULL		,	('20171122')),
-   (20,			NULL,	06,		05,		NULL,			0.07,		NULL		,	('20190802')),
-   (21,			NULL,	11,		15,		NULL,			0.10,		NULL		,	('20180105'))
+	(1,			1000,		1017,		90000,		1500000.00,		0.10,		('20220502'),	('20200611')),
+	(2,			1001,		1015,		90000,		2550200.90,		0.08,		('20190313'),	('20171204')),
+	(3,			1002,		1013,		90002,		3200500.01,		0.07,		('20190821'),	('20180214')),
+	(4,			1003,		1011,		90001,		1250000.00,		0.07,		('20220108'),	('20210709')),
+	(5,			1004,		1009,		90001,		1565000.01,		0.10,		('20220406'),	('20190919')),
+	(6,			1005,		1007,		90001,		2821000.99,		0.11,		('20201103'),	('20190102')),
+	(7,			1006,		1005,		90014,		1210230.01,		0.12,		('20201219'),	('20180725')),
+	(8,			1007,		1003,		90008,		2100000.31,		0.09,		('20211014'),	('20200530')),
+	(9,			1008,		1001,		90009,		1290000.01,		0.05,		('20190201'),	('20181102')),
+   (10,			1009,		1000,		90010,		1770100.00,		0.10,		('20220715'),	('20210203')),
+   (11,			1010,		1002,		90005,		1600100.41,		0.12,		('20210920'),	('20200606')),
+   (12,			1011,		1004,		90003,		2100000.11,		0.06,		('20200130'),	('20190417')),
+   (13,			1012,		1006,		90000,		1530200.21,		0.08,		('20200126'),	('20181203')),
+   (14,			1013,		1008,		90011,		1400010.71,		0.15,		('20190126'),	('20170530')),
+   (15,			1014,		1010,		90012,		1550010.31,		0.13,		('20220311'),	('20200908')),
+   (16,			1015,		1012,		90017,		2301000.72,		0.09,		('20190417'),	('20181212')),
+   (17,			1016,		1014,		90018,		1150100.11,		0.06,		('20201229'),	('20190801')),
+   (18,			1017,		1015,		90018,		1157220.71,		0.08,		('20211122'),	('20200918')),
+   (19,			NULL,		1001,		90003,		NULL,			0.06,		NULL		,	('20171122')),
+   (20,			NULL,		1006,		90005,		NULL,			0.07,		NULL		,	('20190802')),
+   (21,			NULL,		1011,		90015,		NULL,			0.10,		NULL		,	('20180105'))
 
 -- QUERIES
 -- A
--- ηωα ΰϊ ψεεηι δηαψδ ξλμ δϊιεελιν ωπςωε δωπδ μτι ρεβ δαιϊ. ψεεη ξηεωα ς"ι δδτψω
--- αιο ξηιψ δξλιψδ ωμ δηαψδ μμχεη μαιο δξηιψ ΰεϊε αιχω δμχεη ωξελψ ΰϊ αιϊε. ιω 
--- μδφιβ μλμ ρεβ αιϊ )μγεβξΰ: γιψδ ααπιο, τπθδΰεζ ελγεξδ( ΰϊ ρδ"λ δψεεηιν δωπδ.
+-- Χ—Χ©Χ‘ ΧΧª Χ¨Χ•Χ•Χ—Χ™ Χ”Χ—Χ‘Χ¨Χ” ΧΧ›Χ Χ”ΧªΧ™Χ•Χ•Χ›Χ™Χ Χ©Χ ΧΆΧ©Χ• Χ”Χ©Χ Χ” ΧΧ¤Χ™ Χ΅Χ•Χ’ Χ”Χ‘Χ™Χª. Χ¨Χ•Χ•Χ— ΧΧ—Χ•Χ©Χ‘ ΧΆ"Χ™ Χ”Χ”Χ¤Χ¨Χ©
+-- Χ‘Χ™Χ ΧΧ—Χ™Χ¨ Χ”ΧΧ›Χ™Χ¨Χ” Χ©Χ Χ”Χ—Χ‘Χ¨Χ” ΧΧΧ§Χ•Χ— ΧΧ‘Χ™Χ Χ”ΧΧ—Χ™Χ¨ ΧΧ•ΧªΧ• Χ‘Χ™Χ§Χ© Χ”ΧΧ§Χ•Χ— Χ©ΧΧ•Χ›Χ¨ ΧΧª Χ‘Χ™ΧªΧ•. Χ™Χ© 
+-- ΧΧ”Χ¦Χ™Χ’ ΧΧ›Χ Χ΅Χ•Χ’ Χ‘Χ™Χª )ΧΧ“Χ•Χ’ΧΧ: Χ“Χ™Χ¨Χ” Χ‘Χ‘Χ Χ™Χ, Χ¤Χ ΧΧ”ΧΧ•Χ– Χ•Χ›Χ“Χ•ΧΧ”( ΧΧª Χ΅Χ”"Χ› Χ”Χ¨Χ•Χ•Χ—Χ™Χ Χ”Χ©Χ Χ”.
 SELECT H.TypeID AS [House Type],
-	SUM([Final Price] * Income + ([Final Price] - [Wanted Price])) AS [Yearly Income]
+	SUM([Final Price] * Income + ([Final Price] - [Wanted Price])) AS [Current Yearly Income]
 FROM Houses H INNER JOIN Sales S 
 	ON S.HouseID = H.HouseID 
 WHERE YEAR([Sale date]) = YEAR(GETDATE())
@@ -573,10 +573,10 @@ GROUP BY H.TypeID
 	HAVING SUM([Final Price] * Income + ([Final Price] - [Wanted Price])) > 0
 
 -- B
--- δφβ μχεηεϊ ΰωψ ξλψε αΰξφςεϊ ωιψεϊι δηαψδ εχπε αιϊ ΰηψ αξηιψ δβαεδ ξξηιψ
--- δξλιψδ.
+-- Χ”Χ¦Χ’ ΧΧ§Χ•Χ—Χ•Χª ΧΧ©Χ¨ ΧΧ›Χ¨Χ• Χ‘ΧΧΧ¦ΧΆΧ•Χª Χ©Χ™Χ¨Χ•ΧªΧ™ Χ”Χ—Χ‘Χ¨Χ” Χ•Χ§Χ Χ• Χ‘Χ™Χª ΧΧ—Χ¨ Χ‘ΧΧ—Χ™Χ¨ Χ”Χ’Χ‘Χ•Χ” ΧΧΧ—Χ™Χ¨
+-- Χ”ΧΧ›Χ™Χ¨Χ”.
 -- ALL SALES 
-SELECT P.PersonID,P.[First Name],P.[Last Name],P.[Phone Number], S.SaleID,H.TypeID AS [House Type],
+SELECT DISTINCT P.PersonID,P.[First Name],P.[Last Name],P.[Phone Number], S.SaleID,H.TypeID AS [House Type],
 	RTRIM(H.[Built At]) AS [Build At],C.CityName AS City,N.Name AS Neighborhood,H.Rooms,
 	H.[Size (M^2)],H.[Wanted Price],S.[Final Price],(S.[Final Price] - H.[Wanted Price])'DIFF'
 FROM Sales S INNER JOIN 
@@ -589,24 +589,24 @@ FROM Sales S INNER JOIN
  WHERE H.[Wanted Price] < S.[Final Price]
 
 -- C
--- ξδ ι δωλεπδ διεχψϊιϊ αιεϊψ? δφβε ΰϊ ων δωλεπδ εων δςιψ ΰωψ ξξεφς ξηιψι δαϊιν
--- ωπξλψε αδ δλι ιχψιν.
+-- ΧΧ”Χ™ Χ”Χ©Χ›Χ•Χ Χ” Χ”Χ™Χ•Χ§Χ¨ΧªΧ™Χª Χ‘Χ™Χ•ΧªΧ¨? Χ”Χ¦Χ’Χ• ΧΧª Χ©Χ Χ”Χ©Χ›Χ•Χ Χ” Χ•Χ©Χ Χ”ΧΆΧ™Χ¨ ΧΧ©Χ¨ ΧΧΧ•Χ¦ΧΆ ΧΧ—Χ™Χ¨Χ™ Χ”Χ‘ΧªΧ™Χ
+-- Χ©Χ ΧΧ›Χ¨Χ• Χ‘Χ” Χ”Χ›Χ™ Χ™Χ§Χ¨Χ™Χ.
 GO
 	CREATE VIEW V_Neighborhood_TOTAL_Price AS (
-		SELECT C.CityName, N.[Name] AS Neighborhood, 
-			SUM(H.[Wanted Price]) AS [Total Wanted]
-			--,SUM(S.[Final Price]) AS [Total Final Price]
+		SELECT C.CityName, N.[Name] AS Neighborhood
+			,AVG(S.[Final Price]) AS [Total Final Price]
 		FROM Sales S INNER JOIN Houses H ON S.HouseID = H.HouseID
 			 INNER JOIN Neighborhoods N  ON N.NeighborhoodID = H.NeighborhoodID
 			 INNER JOIN Cities C		 ON C.CityId = N.CityId
+		WHERE S.[Sale date] IS NOT NULL
 		GROUP BY C.CityName, N.[Name])
 GO 
 
-SELECT TOP 1 * -- By removing the TOP 1, Will see all Neighborhoods and their total VALUE
-FROM V_Neighborhood_TOTAL_Price V ORDER BY V.[Total Wanted] DESC
+SELECT TOP 1 * -- By removing the TOP 1, Will see all Neighborhoods and their AVG VALUE
+FROM V_Neighborhood_TOTAL_Price V ORDER BY V.[Total Final Price] DESC
 
 -- D
--- δφβ ΰϊ δςεαγ δξφθιιο μλμ ωπδ. ςεαγ ξφθιιο διπε ςεαγ ωρκ δψεεηιν ξξλιψεϊιε δλι βαεδδ αΰεϊδ ωπδ.
+-- Χ”Χ¦Χ’ ΧΧª Χ”ΧΆΧ•Χ‘Χ“ Χ”ΧΧ¦ΧΧ™Χ™Χ ΧΧ›Χ Χ©Χ Χ”. ΧΆΧ•Χ‘Χ“ ΧΧ¦ΧΧ™Χ™Χ Χ”Χ™Χ Χ• ΧΆΧ•Χ‘Χ“ Χ©Χ΅Χ Χ”Χ¨Χ•Χ•Χ—Χ™Χ ΧΧΧ›Χ™Χ¨Χ•ΧªΧ™Χ• Χ”Χ›Χ™ Χ’Χ‘Χ•Χ”Χ” Χ‘ΧΧ•ΧªΧ” Χ©Χ Χ”.
 GO
 	CREATE VIEW V_EXCELLENT_WORKER AS (
 		SELECT YEAR(S.[Sale Date]) AS [Year], S.SalesManID,
@@ -627,9 +627,9 @@ GROUP BY v.[Year], S.[First Name], S.[Last Name], S.SalesManID, S.CompanyID
 ORDER BY [Year] DESC
 
 -- E
--- δφιςε αιϊ ηγω εξψεεη ιεϊψ μμχεη ωψλω αιϊ αΰξφςεϊ ωιψεϊι δηαψδ μτπι ωπϊιιν ΰε
--- ιεϊψ αΰεϊδ ςιψ ωαδ βψ. )ξψεεη ιεϊψ ξωξςε ξρτψ ηγψιν βγεμ ιεϊψ ΰε ωθη βγεμ ιεϊψ(
--- ωιξε μα λι δαιϊ δξεφς ηιια μδιεϊ αιϊ μξλιψδ αψβς ζδ εΰιπε αιϊ ωλαψ πξλψ.
+-- Χ”Χ¦Χ™ΧΆΧ• Χ‘Χ™Χª Χ—Χ“Χ© Χ•ΧΧ¨Χ•Χ•Χ— Χ™Χ•ΧªΧ¨ ΧΧΧ§Χ•Χ— Χ©Χ¨Χ›Χ© Χ‘Χ™Χª Χ‘ΧΧΧ¦ΧΆΧ•Χª Χ©Χ™Χ¨Χ•ΧªΧ™ Χ”Χ—Χ‘Χ¨Χ” ΧΧ¤Χ Χ™ Χ©Χ ΧªΧ™Χ™Χ ΧΧ•
+-- Χ™Χ•ΧªΧ¨ Χ‘ΧΧ•ΧªΧ” ΧΆΧ™Χ¨ Χ©Χ‘Χ” Χ’Χ¨. )ΧΧ¨Χ•Χ•Χ— Χ™Χ•ΧªΧ¨ ΧΧ©ΧΧΆΧ• ΧΧ΅Χ¤Χ¨ Χ—Χ“Χ¨Χ™Χ Χ’Χ“Χ•Χ Χ™Χ•ΧªΧ¨ ΧΧ• Χ©ΧΧ— Χ’Χ“Χ•Χ Χ™Χ•ΧªΧ¨(
+-- Χ©Χ™ΧΧ• ΧΧ‘ Χ›Χ™ Χ”Χ‘Χ™Χª Χ”ΧΧ•Χ¦ΧΆ Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª Χ‘Χ™Χª ΧΧΧ›Χ™Χ¨Χ” Χ‘Χ¨Χ’ΧΆ Χ–Χ” Χ•ΧΧ™Χ Χ• Χ‘Χ™Χª Χ©Χ›Χ‘Χ¨ Χ ΧΧ›Χ¨.
 GO
 	CREATE VIEW V_CUSTOMERS_2YEARS_EXPIRY AS (
 		SELECT P.PersonID, (P.[First Name] + ' ' + P.[Last Name]) AS [Full Name], N.CityId, 
@@ -649,6 +649,7 @@ GO
 		-- If COMMENT the 'WHERE [For Sale] <> 0' you will also get the not for sale Houses
 GO
 -- This query suggests a house with conditions foreach customer that bought a house before 2 years ago and at the same city
+-- A customer can be suggested to several houses if they stand in their own house condition
 SELECT P.PersonID,(P.[First Name] + ' ' + P.[Last Name])'Full Name', P.[Phone Number],
 	/*Onwners Current house*/ H.HouseID AS [Current HouseID], H.TypeID, H.Rooms AS [Current Rooms], H.[Size (M^2)]  AS [Current Size (M^2)], LTRIM(H.[Built At]) AS [Current Built At], N.[Name] AS Neighbor,
 	/*Matching House*/ V2.*

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using ReverseEnginereeing.Data;
 
 internal class Program
@@ -55,12 +56,12 @@ internal class Program
             roleMngr.CreateAsync(adminRole).GetAwaiter().GetResult();
         }
 
-        if (!ctx.Users.Any(u => u.UserName == "admin"))
+        if (!ctx.Users.Any(u => u.UserName == "admin@test.com"))
         {
             var adminUser = new IdentityUser
             {
-                UserName = "admin",
-                Email = "admin@text.com"
+                UserName = "admin@test.com",
+                Email = "admin@test.com",
             };
             var result = userMngr.CreateAsync(adminUser, "password").GetAwaiter().GetResult();
             // add role to user
@@ -89,8 +90,7 @@ internal class Program
 
         builder.Services.AddRazorPages();
         builder.Services.AddDbContext<NadlanDbContext>(options =>
-                    options
-                        .UseLazyLoadingProxies()
-                        .UseSqlServer(builder.Configuration.GetConnectionString("NADLAN")));
+                    options.UseLazyLoadingProxies()
+                           .UseSqlServer(builder.Configuration.GetConnectionString("NADLAN_EF")));
     }
 }

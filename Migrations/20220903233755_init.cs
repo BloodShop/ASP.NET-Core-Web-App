@@ -63,7 +63,7 @@ namespace ReverseEnginereeing.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "IdentityUser<string>",
+                name: "IdentityUser",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -85,7 +85,7 @@ namespace ReverseEnginereeing.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_IdentityUser<string>", x => new { x.Id, x.UserName });
+                    table.PrimaryKey("PK_IdentityUser", x => new { x.Id, x.UserName });
                 });
 
             migrationBuilder.CreateTable(
@@ -458,7 +458,7 @@ namespace ReverseEnginereeing.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "IdentityUser<string>");
+                name: "IdentityUser");
 
             migrationBuilder.DropTable(
                 name: "RoleClaims");
