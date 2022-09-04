@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ReverseEnginereeing.Data;
@@ -10,16 +6,17 @@ using ReverseEnginereeing.Models;
 
 namespace ReverseEnginereeing.Pages.Comapanies
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
+        private readonly NadlanDbContext _context;
 
-        public IndexModel(ReverseEnginereeing.Data.NadlanDbContext context)
+        public IndexModel(NadlanDbContext context)
         {
             _context = context;
         }
 
-        public IList<Company> Company { get;set; } = default!;
+        public IList<Company> Company { get; set; } = default!;
 
         public async Task OnGetAsync()
         {

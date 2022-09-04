@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ReverseEnginereeing.Controllers
 {
+    [Authorize]
     public class PanelController : Controller
     {
-        //[Authorize]
         public IActionResult Index() => View();
-        
     }
 }

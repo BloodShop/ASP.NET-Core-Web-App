@@ -77,7 +77,7 @@ internal class Program
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-        builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+        builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
         {
             options.SignIn.RequireConfirmedAccount = true;
             options.Password.RequireNonAlphanumeric = false;
@@ -85,8 +85,16 @@ internal class Program
             options.Password.RequireUppercase = false;
             options.Password.RequiredLength = 6;
         })
-            .AddRoles<IdentityRole>()
+            //.AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<NadlanDbContext>(); // Authentication
+
+        builder.Services.Configure<PasswordHasherOptions>(options =>
+            options.CompatibilityMode = PasswordHasherCompatibilityMode.IdentityV2
+            );
+        builder.Services.ConfigureApplicationCookie(config =>
+        {
+            config.LoginPath = "/Login";
+        });
 
         builder.Services.AddRazorPages();
         builder.Services.AddDbContext<NadlanDbContext>(options =>

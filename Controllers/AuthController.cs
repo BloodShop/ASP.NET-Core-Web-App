@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ReverseEnginereeing.ViewModel;
+using ReverseEnginereeing.ViewModels;
 
 namespace ReverseEnginereeing.Controllers
 {
@@ -15,13 +15,13 @@ namespace ReverseEnginereeing.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            return View(new LoginViewModel());
+            return View(new Register());
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel vm)
+        public async Task<IActionResult> Login(Register vm)
         {
-            var result = await _signInManager.PasswordSignInAsync(vm.UserName, vm.Password, false, false);
+            var result = await _signInManager.PasswordSignInAsync(vm.Email, vm.Password, false, false);
             return RedirectToAction("Index", "Home");
         }
 

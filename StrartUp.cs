@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ReverseEnginereeing.Data;
 
 namespace ReverseEnginereeing
 {
@@ -15,13 +17,16 @@ namespace ReverseEnginereeing
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddRazorPages();
+            //services.AddDbContext<NadlanDbContext>(opt => opt.UseSqlServer());
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if(env.IsDevelopment())
+            if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
+            else
+                app.UseExceptionHandler("/Error");
 
             app.UseAuthentication();
 
