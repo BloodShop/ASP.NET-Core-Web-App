@@ -13,9 +13,9 @@ namespace ReverseEnginereeing.Pages.Countries
 {
     public class EditModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NADLANContext _context;
+        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
 
-        public EditModel(ReverseEnginereeing.Data.NADLANContext context)
+        public EditModel(ReverseEnginereeing.Data.NadlanDbContext context)
         {
             _context = context;
         }

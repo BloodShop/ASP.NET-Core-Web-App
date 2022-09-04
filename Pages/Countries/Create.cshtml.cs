@@ -12,9 +12,9 @@ namespace ReverseEnginereeing.Pages.Countries
 {
     public class CreateModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NADLANContext _context;
+        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
 
-        public CreateModel(ReverseEnginereeing.Data.NADLANContext context)
+        public CreateModel(ReverseEnginereeing.Data.NadlanDbContext context)
         {
             _context = context;
         }

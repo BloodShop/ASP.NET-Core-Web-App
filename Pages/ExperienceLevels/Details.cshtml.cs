@@ -12,9 +12,9 @@ namespace ReverseEnginereeing.Pages.ExperienceLevels
 {
     public class DetailsModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NADLANContext _context;
+        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
 
-        public DetailsModel(ReverseEnginereeing.Data.NADLANContext context)
+        public DetailsModel(ReverseEnginereeing.Data.NadlanDbContext context)
         {
             _context = context;
         }

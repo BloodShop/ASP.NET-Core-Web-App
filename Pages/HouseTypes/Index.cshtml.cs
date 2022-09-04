@@ -12,9 +12,9 @@ namespace ReverseEnginereeing.Pages.HouseTypes
 {
     public class IndexModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NADLANContext _context;
+        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
 
-        public IndexModel(ReverseEnginereeing.Data.NADLANContext context)
+        public IndexModel(ReverseEnginereeing.Data.NadlanDbContext context)
         {
             _context = context;
         }

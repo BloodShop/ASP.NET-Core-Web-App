@@ -12,9 +12,9 @@ namespace ReverseEnginereeing.Pages.HouseTypes
 {
     public class DeleteModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NADLANContext _context;
+        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
 
-        public DeleteModel(ReverseEnginereeing.Data.NADLANContext context)
+        public DeleteModel(ReverseEnginereeing.Data.NadlanDbContext context)
         {
             _context = context;
         }
