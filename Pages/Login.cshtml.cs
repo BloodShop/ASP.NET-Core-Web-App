@@ -21,11 +21,12 @@ namespace ReverseEnginereeing.Pages
         public void OnGet()
         { }
 
+        [HttpPost]
         public async Task<IActionResult> OnPostAsync(string returnUrl)
         {
             if (ModelState.IsValid)
             {
-                var identityResult = await _signInManager.PasswordSignInAsync(Model.Email, Model.Password, Model.RememberMe, lockoutOnFailure:false).ConfigureAwait(false);
+                var identityResult = await _signInManager.PasswordSignInAsync(Model.Email, Model.Password, Model.RememberMe, lockoutOnFailure: false).ConfigureAwait(false);
                 if (identityResult.Succeeded)
                 {
                     if (returnUrl == null || returnUrl == "/")

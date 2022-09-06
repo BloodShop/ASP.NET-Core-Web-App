@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,9 +9,9 @@ namespace ReverseEnginereeing.Pages.Cities
 {
     public class EditModel : PageModel
     {
-        private readonly ReverseEnginereeing.Data.NadlanDbContext _context;
+        readonly NadlanDbContext _context;
 
-        public EditModel(ReverseEnginereeing.Data.NadlanDbContext context)
+        public EditModel(NadlanDbContext context)
         {
             _context = context;
         }
@@ -30,13 +26,13 @@ namespace ReverseEnginereeing.Pages.Cities
                 return NotFound();
             }
 
-            var city =  await _context.Cities.FirstOrDefaultAsync(m => m.CityId == id);
+            var city = await _context.Cities.FirstOrDefaultAsync(m => m.CityId == id);
             if (city == null)
             {
                 return NotFound();
             }
             City = city;
-           ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId");
+            ViewData["CountryId"] = new SelectList(_context.Countries, "CountryId", "CountryId");
             return Page();
         }
 
@@ -72,7 +68,7 @@ namespace ReverseEnginereeing.Pages.Cities
 
         private bool CityExists(int id)
         {
-          return (_context.Cities?.Any(e => e.CityId == id)).GetValueOrDefault();
+            return (_context.Cities?.Any(e => e.CityId == id)).GetValueOrDefault();
         }
     }
 }

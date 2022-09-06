@@ -79,7 +79,7 @@ internal class Program
 
         builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
         {
-            options.SignIn.RequireConfirmedAccount = true;
+            options.SignIn.RequireConfirmedAccount = false;
             options.Password.RequireNonAlphanumeric = false;
             options.Password.RequireDigit = false;
             options.Password.RequireUppercase = false;
